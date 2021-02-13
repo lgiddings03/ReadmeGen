@@ -89,7 +89,26 @@ const writeFileAsync = util.promisify(writeToFile);
 
 
 // TODO: Create a function to initialize app
-function init() {}
+async function init() {
+    try {
+
+    const userResponses = await inquirer.prompt(questions);
+    console.log("Your responses: ", userResponses);
+    console.log("Thank you for your responses! Fetching your GitHub data next...");
+
+    const userInfo = await api.getUser(userResponses);
+    console.log("Your GitHub user info: ", userInfo);
+
+    console.log("Generating your README next...")
+    const markdown = generateMarkdown(userResponses, userInfo);
+    console.log(markdown);
+
+    await writeFileAsync('ExampleREADME.md', markdown);
+
+} catch (error) {
+    console.log(error);
+}
+}
 
 // Function call to initialize app
 init();
