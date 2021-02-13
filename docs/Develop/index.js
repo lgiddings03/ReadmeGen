@@ -3,6 +3,9 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
+const api = require('docs\Develop\utils\api.js');
+const generateMarkdown = require('docs\Develop\utils\generateMarkdown.js');
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -73,6 +76,16 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+          return console.log(err);
+        }
+      
+        console.log("Yay! You can now see your README.md")
+    });
+}
+
+const writeFileAsync = util.promisify(writeToFile);
 
 
 // TODO: Create a function to initialize app
