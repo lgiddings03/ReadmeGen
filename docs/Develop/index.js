@@ -3,8 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
-const api = require('docs\Develop\utils\api.js');
-const generateMarkdown = require('docs\Develop\utils\generateMarkdown.js');
+const api = require('docs\Develop\\utils\api.js');
+const generateMarkdown = require('docs\Develop\\utils\generateMarkdown.js');
 
 
 // TODO: Create an array of questions for user input
