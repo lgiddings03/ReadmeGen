@@ -11,7 +11,12 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  ![GitHub](https://img.shields.io/github/license/lgiddings03/ReadmeGen?style=for-the-badge)
+  renderLink();//img.shields.io/github/license/lgiddings03/ReadmeGen?style=for-the-badge)
+
+
+    function renderLink() {
+      ![GitHub](https);
+    }
 }
 
 // TODO: Create a function that returns the license section of README
@@ -25,7 +30,7 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(_markdown) {
-  var md = require('markdown-it')({
+  var generateMarkdown = require('markdown-it')({
     html: true,
     linkify: true,
     typographer: true
