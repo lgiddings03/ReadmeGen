@@ -89,7 +89,7 @@ const writeFileAsync = util.promisify(writeToFile);
 
 
 // TODO: Create a function to initialize app
-async function init() {
+function init() {
     try {
 
     const userResponses = await inquirer.prompt(questions);
